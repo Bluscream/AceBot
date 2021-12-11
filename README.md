@@ -14,17 +14,17 @@ Support server invite [here.](https://discord.gg/X7abzRe)
 
 ## Table of Contents
 
-* [Usage](#usage)
-  * [General commands](#general-commands)
-  * [Starboard](#starboard)
-  * [Tags](#tags)
-  * [Bot configuration](#bot-configuration)
-  * [Moderation](#moderation)
-  * [Welcome](#welcome)
-  * [Roles](#roles)
-  * [Feedback](#feedback)
-* [Installing the bot](#installing-the-bot)
-* [Acknowledgements](#acknowledgements)
+- [Usage](#usage)
+  - [General commands](#general-commands)
+  - [Starboard](#starboard)
+  - [Tags](#tags)
+  - [Bot configuration](#bot-configuration)
+  - [Moderation](#moderation)
+  - [Welcome](#welcome)
+  - [Roles](#roles)
+  - [Feedback](#feedback)
+- [Installing the bot](#installing-the-bot)
+- [Acknowledgements](#acknowledgements)
 
 ## Usage
 
@@ -50,6 +50,7 @@ And many more!
 ```
 
 It can fetch cute random images on demand!
+
 ```
 woof        Get a random doggo picture
 meow        Get a random cat picture
@@ -72,6 +73,7 @@ To disable auto-cleaning, do `starboard threshold`. The starboard can also be
 temporarily disabled (to clean it, for example) using `starboard lock` and enabled using `starboard unlock`.
 
 Other misc. starboard commands:
+
 ```
 star            Star a message by ID
 unstar          Unstar a message by ID
@@ -79,6 +81,7 @@ star info       Show information about a starred message
 star show       Bring up a starred message in the current channel
 star delete     Delete a starred message from the starboard. Appropriate permissions/relations required to run this.
 ```
+
 Run `help starboard` for a complete list.
 
 ### Tags
@@ -88,9 +91,11 @@ The tag system is immensely useful for bringing up text or images on demand.
 To try it out, you can create a new tag interactively by simply running `tag make`.
 
 Here's an example of the tag system in work:
+
 # ![Tag demonstration](https://i.imgur.com/LxEteHI.gif)
 
 A few of the tag commands:
+
 ```
 tag             Bring up a tag
 tag create      Create a new tag
@@ -101,11 +106,13 @@ tag list        List a members tags, or all the server tags
 tag info        Extensive information about a tag
 tags            List all of your own tags
 ```
+
 Run `help tag` for a complete list.
 
 ### Bot configuration
 
 The prefix of the bot is configurable using the `prefix` command. If you forget the current prefix, the help menu can be brought up by simply mentioning the bot.
+
 ```
 .prefix !
 # new commands are now invoked using !
@@ -114,11 +121,12 @@ The prefix of the bot is configurable using the `prefix` command. If you forget 
 
 A role can be set that can also configure the bot using the `modrole` command.
 Members with the mod role can delete any tag, delete starred messages, change the prefix, etc. Only thing members with this role can't do is change the mod role, as this requires administrator privileges.
+
 ```
 .modrole @somerole
 ```
-To see what the current configuration is, run `config`.
 
+To see what the current configuration is, run `config`.
 
 ### Moderation
 
@@ -126,6 +134,7 @@ To enable member muting, create a role that prohibits sending messages and set i
 To mute a member do `mute <member>` and to unmute use `unmute <member>`. Similarly, `ban` and `unban` also exist.
 
 You can issue tempbans and tempmutes:
+
 ```
 tempban <member> <amount> <unit> [reason]
 tempmute <member> <amount> <unit> [reason]
@@ -142,6 +151,7 @@ Tempbanning will make the bot attempt to send a DM to the banned member with the
 The bot can be configured to send a message each time a new member joins your server.
 
 To set this up, first specify a channel the messages should be sent in using `welcome channel`. Then set up a welcome message using `welcome message`. A list of replacements is listed here:
+
 ```
 {user}          Replaced with a mention of the member that joined
 {guild}         Replaced with the server name
@@ -155,7 +165,9 @@ Run `help welcome` for a complete list of commands.
 ### Roles
 
 The bot can create a role selector for you. Here's an example of such a selector:
+
 # ![Role selector](https://i.imgur.com/1RoSHLs.png)
+
 By clicking the reactions the user is given the correlated role.
 
 Run `help roles` for a full list of commands.
