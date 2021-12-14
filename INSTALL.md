@@ -12,25 +12,25 @@ but for development your local PC will suffice.
 
 ## Requirements
 
-* PostgreSQL
-* Python 3
-* PIP (should come with Python)
-* Git (or GitHub etc.)
+- PostgreSQL
+- Python 3
+- PIP (should come with Python)
+- Git (or GitHub etc.)
 
 Please install these according to their instructions.
 
 ## Setting up PostgreSQL
 
-* **Windows**
-  * When installing PostgreSQL, you will be asked to choose a password. **Remember it.**
-  * Open up a Command Prompt and run `psql -U postgres`.
-  * Log in using the password you chose during the installation.
-* **Linux (and \*nix in general)**
-  * The installation of PostgreSQL should have created a user account called `postgres`.
+- **Windows**
+  - When installing PostgreSQL, you will be asked to choose a password. **Remember it.**
+  - Open up a Command Prompt and run `psql -U postgres`.
+  - Log in using the password you chose during the installation.
+- **Linux (and \*nix in general)**
+  - The installation of PostgreSQL should have created a user account called `postgres`.
     (If not, it's probably best to reinstall PostgreSQL or search online for a solution.)
-  * Log into that user's account (`sudo -u postgres -i` for example).
-  * Run `psql`.
-* In this `psql` shell, run the following commands:
+  - Log into that user's account (`sudo -u postgres -i` for example).
+  - Run `psql`.
+- In this `psql` shell, run the following commands:
   ```postgresql
   CREATE ROLE ace WITH LOGIN PASSWORD 'choose_a_password';
   CREATE DATABASE acebot OWNER ace;
@@ -38,13 +38,14 @@ Please install these according to their instructions.
   CREATE EXTENSION pg_trgm;
   \q -- quit out of psql
   ```
-* On Linux, you can now `exit` to return to your own user account.
+- On Linux, you can now `exit` to return to your own user account.
 
 ## Setting up AceBot
 
-* Clone this repository and change into its root folder:
+- Clone this repository and change into its root folder:
   `git clone --recurse-submodules https://github.com/Run1e/AceBot && cd AceBot`
-* Create a file called `config.py` and add this content to it:
+- Create a file called `config.py` and add this content to it:
+
   ```python
   import logging
   import discord
@@ -69,19 +70,22 @@ Please install these according to their instructions.
   WOLFRAM_KEY = None
   APIXU_KEY = None
   ```
-  * You can get your bot token from the [Discord Developer Portal](https://discord.com/developers/applications).
+
+  - You can get your bot token from the [Discord Developer Portal](https://discord.com/developers/applications).
     If you haven't already:
-    * Create a new application (its name doesn't matter).
-    * Go to “Bot” in the left sidebar.
-    * Click “Add Bot”, read the warning and accept it.
-  * Your database bind will look like this:
+    - Create a new application (its name doesn't matter).
+    - Go to “Bot” in the left sidebar.
+    - Click “Add Bot”, read the warning and accept it.
+  - Your database bind will look like this:
     ```
     postgresql://ace:your_password@localhost/acebot
     ```
-  * Your owner ID is the ID of your Discord account.
-    * To obtain it, open your Discord user settings, go to “Appearance”, and enable “Developer Mode”.
+  - Your owner ID is the ID of your Discord account.
+    - To obtain it, open your Discord user settings, go to “Appearance”, and enable “Developer Mode”.
       Exit the settings, then right-click yourself anywhere and click “Copy ID”.
-* Create another file called `ids.py`, this time with these contents:
+
+- Create another file called `ids.py`, this time with these contents:
+
   ```python
   AHK_GUILD_ID = None
 
@@ -120,16 +124,17 @@ Please install these according to their instructions.
 
   IGNORE_ACTIVE_CHAN_IDS = tuple()
   ```
-Both of these files are templates and you can change almost any value in them as you see fit.
-Particularly `ids.py` needs configuring if you want to use the bot to its full potential;
-you can get the ID of channels, categories, roles, etc. by right-clicking on them
-(if you've got the Developer Mode enabled).
+
+  Both of these files are templates and you can change almost any value in them as you see fit.
+  Particularly `ids.py` needs configuring if you want to use the bot to its full potential;
+  you can get the ID of channels, categories, roles, etc. by right-clicking on them
+  (if you've got the Developer Mode enabled).
 
 ## Finishing up
 
-* Run `pip install -r requirements.txt`.
-* Run `python migrate.py` to setup all necessary databases automatically.
-* Create a folder called `logs`.
+- Run `pip install -r requirements.txt`.
+- Run `python migrate.py` to setup all necessary databases automatically.
+- Create a folder called `logs`.
 
 ## That's it!
 
